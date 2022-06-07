@@ -1,0 +1,17 @@
+.upload-img input {
+  display: none;
+}
+.upload-img {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  transition: transform 0.2s ease-in-out;
+}
+.upload-img:hover {
+  transform: translate(0, -2px);
+}

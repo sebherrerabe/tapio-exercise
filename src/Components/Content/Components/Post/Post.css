@@ -7,4 +7,20 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+  width: 100px;
+}
+.tools svg {
+  cursor: pointer;
+}
+.tools svg:hover{
+  transform: translate(0px, -1px);
+}
+.edit-mode input {
+  border: 1px solid teal;
+}
+.edit-mode textarea {
+  border: 1px solid teal;
+}
+.edit-mode .picture {
+  border: 1px solid black;
 }

@@ -1,9 +1,12 @@
 import { useState } from 'react';
 
+import UploadButton from './Components/UploadImages/UploadImages';
+
 import './WritePost.css';
 
 const WritePost = () => {
     const [inputValues, setInputValues] = useState({ title: "", content: "", img: "" });
+    const [displayLoader, setDisplayLoader] = useState(false);
 
     const handleChange = (e) => {
         setInputValues({ ...inputValues, [e.target.name]: e.target.value });
@@ -13,13 +16,17 @@ const WritePost = () => {
         e.preventDefault();
         console.log(inputValues);
         setInputValues({ title: "", content: "", img: "" });
+        setDisplayLoader(false);
     }
 
     return (<div className="write-post">
         <div className="seb-box">
             <div className="inner-box">
                 <div className="left-container">
-                    <div className="picture"></div>
+                    <div className="picture" style={{ backgroundImage: `url(${inputValues.img})` }}>
+
+                        {<UploadButton setInfo={setInputValues} index={0} displayLoader={displayLoader} setDisplayLoader={setDisplayLoader} />}
+                    </div>
                 </div>
                 <div className="right-container">
                     <form action="" onSubmit={handleSubmit}>
