@@ -10,9 +10,9 @@ import './Post.css';
 
 
 
-const Post = ({ img, title, content, index }) => {
+const Post = ({ post }) => {
 
-    const [inputValues, setInputValues] = useState({ title: title, content: content, img: img });
+    const [inputValues, setInputValues] = useState({ title: post.title, content: post.content, img: post.img });
 
     const [displayLoader, setDisplayLoader] = useState(false);
 
@@ -44,7 +44,7 @@ const Post = ({ img, title, content, index }) => {
             <div className={`inner-box ${!isDisabled && 'edit-mode'}`}>
                 <div className="left-container">
                     <div className="picture" style={{ backgroundImage: `url(${inputValues.img})` }}>
-                        {!isDisabled && <UploadButton setInfo={setInputValues} index={index} displayLoader={displayLoader} setDisplayLoader={setDisplayLoader} />}
+                        {!isDisabled && <UploadButton setInfo={setInputValues} id={post._id} displayLoader={displayLoader} setDisplayLoader={setDisplayLoader} />}
                     </div>
                     <div className="tools">
                         <Toggle width="40" height="25" sliderWidth={"16"} sliderHeight={"16"} translate={"16"} backgroundColorChecked={"teal"} onChange={editMode} />
@@ -56,10 +56,8 @@ const Post = ({ img, title, content, index }) => {
                         <div className="right-top-container">
                             <input type="text" name='title' value={inputValues.title} disabled={isDisabled} onChange={handleChange} />
                         </div>
-                        <div className="right-middle-container">
-                            <textarea name='content' value={inputValues.content} disabled={isDisabled} onChange={handleChange}></textarea>
-                        </div>
-                        <div className="right-bottom-container">
+                        <div className="right-middle-container post-content">
+                            <textarea style={{height: "90%"}} name='content' value={inputValues.content} disabled={isDisabled} onChange={handleChange}></textarea>
                         </div>
                     </form>
                 </div>

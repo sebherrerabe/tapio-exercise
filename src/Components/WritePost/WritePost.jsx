@@ -1,10 +1,11 @@
+import axios from 'axios';
 import { useState } from 'react';
 
 import UploadButton from './Components/UploadImages/UploadImages';
 
 import './WritePost.css';
 
-const WritePost = () => {
+const WritePost = ({ getFromDb }) => {
     const [inputValues, setInputValues] = useState({ title: "", content: "", img: "" });
     const [displayLoader, setDisplayLoader] = useState(false);
 
@@ -12,9 +13,21 @@ const WritePost = () => {
         setInputValues({ ...inputValues, [e.target.name]: e.target.value });
     }
 
+
+    const sendToDB = () => {
+        axios.post('https://tapio-exercise-api.herokuapp.com/api/createpost', {
+            title: inputValues.title,
+            content: inputValues.content,
+            img: inputValues.img
+        })
+            .then(() => {
+                getFromDb();
+            })
+            .catch(err => console.log(err));
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(inputValues);
+        sendToDB();
         setInputValues({ title: "", content: "", img: "" });
         setDisplayLoader(false);
     }
@@ -25,7 +38,7 @@ const WritePost = () => {
                 <div className="left-container">
                     <div className="picture" style={{ backgroundImage: `url(${inputValues.img})` }}>
 
-                        {<UploadButton setInfo={setInputValues} index={0} displayLoader={displayLoader} setDisplayLoader={setDisplayLoader} />}
+                        {<UploadButton setInfo={setInputValues} id={0} displayLoader={displayLoader} setDisplayLoader={setDisplayLoader} />}
                     </div>
                 </div>
                 <div className="right-container">

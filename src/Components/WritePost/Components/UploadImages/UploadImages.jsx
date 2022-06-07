@@ -8,14 +8,14 @@ import loader from "./loading.svg";
 import './UploadImages.css'
 
 
-const UploadButton = ({ setInfo, index, displayLoader, setDisplayLoader }) => {
+const UploadButton = ({ setInfo, id, displayLoader, setDisplayLoader }) => {
 
 
     const [icon, setIcon] = useState(null);
     const [myId, setMyId] = useState('upload-image-');
     useEffect(() => {
-        setMyId(prevId => prevId + index);
-    }, [index])
+        setMyId(prevId => prevId + id);
+    }, [id])
 
     const uploadImage = (e) => {
         const image = e.target.files[0]

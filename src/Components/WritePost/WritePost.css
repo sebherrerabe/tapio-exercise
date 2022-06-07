@@ -1,16 +1,16 @@
 .write-post {
-  height: 35%;
+  height: 50%;
   width: 100%;
   display: flex;
   margin-top: 20px;
 }
 .left-container {
   height: 100%;
-  width: 32%;
+  width: 25%;
 }
 .picture {
-  height: 100px;
-  width: 100px;
+  height: 140px;
+  width: 140px;
   border-radius: 10px;
   background-color: teal;
   display: flex;
@@ -20,7 +20,7 @@
 }
 .right-container {
   height: 100%;
-  width: 68%;
+  width: 75%;
   display: flex;
 }
 .right-container form {
@@ -46,9 +46,11 @@ input {
   width: 100%;
   font-size: 1.3em;
   background-color: whitesmoke;
+  color: black;
+  font-weight: bold;
 }
 .right-middle-container {
-  height: 55%;
+  height: 60%;
   width: 100%;
   display: flex;
 }
@@ -61,13 +63,14 @@ textarea {
   border-radius: 10px;
 }
 .right-middle-container textarea {
-  height: 80%;
+  height: 85%;
   width: 100%;
   font-size: 1em;
   background-color: whitesmoke;
+  color: black;
 }
 .right-bottom-container {
-  height: 20%;
+  height: 15%;
   width: 100%;
   display: flex;
   align-items: center;

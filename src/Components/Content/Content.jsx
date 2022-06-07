@@ -4,10 +4,14 @@ import './Content.css'
 
 
 
-const Content = () => {
+const Content = ({posts, getFromDb}) => {
+
     return (
         <div className="content">
-            <Post />
+            {posts.reverse().map(post => {
+                return <Post key={post._id} post={post} getFromDb={getFromDb} />
+            })}
+
         </div>);
 }
 
