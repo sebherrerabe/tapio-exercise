@@ -1,12 +1,15 @@
 .write-post {
-  height: 50%;
+  height: 48%;
   width: 100%;
   display: flex;
   margin-top: 20px;
 }
+.write {
+  width: 90%;
+}
 .left-container {
   height: 100%;
-  width: 25%;
+  width: 24%;
 }
 .picture {
   height: 140px;
@@ -20,7 +23,7 @@
 }
 .right-container {
   height: 100%;
-  width: 75%;
+  width: 76%;
   display: flex;
 }
 .right-container form {
@@ -73,7 +76,7 @@ textarea {
   height: 15%;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 .btn {
@@ -85,4 +88,7 @@ textarea {
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }

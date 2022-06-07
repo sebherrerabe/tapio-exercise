@@ -2,24 +2,33 @@
   height: 200px;
   margin-top: 20px;
 }
+.post .right-container {
+  width: 73%;
+}
+.x-container {
+  width: 3%;
+  display: flex;
+  justify-content: center;
+}
+.x-container svg {
+  cursor: pointer;
+}
+
+.x-container svg:hover {
+  transform: translate(0px, -1px);
+}
 .tools {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
   width: 140px;
 }
-.tools svg {
-  cursor: pointer;
-}
-.tools svg:hover {
-  transform: translate(0px, -1px);
-}
 .edit-mode input {
-  border: 1px solid teal;
+  background-color: rgb(216, 216, 216);
 }
 .edit-mode textarea {
-  border: 1px solid teal;
+  background-color: rgb(216, 216, 216);
 }
 .edit-mode .picture {
   border: 1px solid black;
