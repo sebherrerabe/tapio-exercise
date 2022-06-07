@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import axios from 'axios';
 
@@ -6,7 +6,6 @@ import Header from './Components/Header/Header';
 import WritePost from './Components/WritePost/WritePost';
 import Content from './Components/Content/Content';
 
-import loader from './Assets/loader.svg'
 
 
 import './App.css';
@@ -26,21 +25,21 @@ function App() {
     }, 300);
   }
 
-  const getFromDb = () => {
+
+  const getFromDb = useCallback(() => {
     setLoading(true);
     axios.get('https://tapio-exercise-api.herokuapp.com/api/posts')
       .then(res => {
         closeLoading()
-        setPosts(res.data);
+        setPosts(res.data.reverse());
       })
       .catch(err => console.log(err));
-  }
-
+  }, [])
 
 
   useEffect(() => {
     getFromDb();
-  }, []);
+  }, [getFromDb]);
 
   return (
     <div className="App">
@@ -48,7 +47,7 @@ function App() {
         <Header />
         <div className="inner-container">
           <WritePost getFromDb={getFromDb} />
-          <Content posts={posts} setPosts={setPosts} getFromDb={getFromDb} loading={loading}/>
+          <Content posts={posts} setPosts={setPosts} loading={loading} />
         </div>
       </div>
     </div>

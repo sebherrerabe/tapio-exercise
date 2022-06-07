@@ -12,7 +12,7 @@ import './Post.css';
 
 
 
-const Post = ({ post, setPosts, getFromDb }) => {
+const Post = ({ post, setPosts }) => {
 
     const [inputValues, setInputValues] = useState({ title: post.title, content: post.content, img: post.img });
 
