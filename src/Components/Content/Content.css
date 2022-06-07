@@ -1,0 +1,7 @@
+.content {
+    height: 65%;
+    width: 100%;
+    display: flex;
+    background-color: aqua;
+    overflow-y: scroll;
+}

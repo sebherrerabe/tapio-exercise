@@ -1,0 +1,81 @@
+.write-post {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+}
+.left-container {
+  height: 100%;
+  width: 32%;
+}
+.picture {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  background-color: teal;
+}
+.right-container {
+  height: 100%;
+  width: 68%;
+  display: flex;
+}
+.right-container form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right-top-container {
+  height: 25%;
+  width: 100%;
+  display: flex;
+}
+input {
+  border: none;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+.right-top-container input {
+  height: 70%;
+  width: 100%;
+  font-size: 1.3em;
+  background-color: whitesmoke;
+}
+.right-middle-container {
+  height: 55%;
+  width: 100%;
+  display: flex;
+}
+textarea {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  resize: none;
+  border: none;
+  border-radius: 10px;
+}
+.right-middle-container textarea {
+  height: 80%;
+  width: 100%;
+  font-size: 1em;
+  background-color: whitesmoke;
+}
+.right-bottom-container {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.btn {
+  height: 30px;
+  width: 80px;
+  border: none;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
