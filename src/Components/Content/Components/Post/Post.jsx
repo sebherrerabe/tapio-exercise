@@ -37,9 +37,7 @@ const Post = ({ post, setPosts }) => {
 
 
     const deletePost = () => {
-        axios.post('https://tapio-exercise-api.herokuapp.com/api/deletepost', {
-            id: post._id
-        })
+        axios.delete(`https://tapio-exercise-api.herokuapp.com/api/posts/${post._id}`)
             .then(() => {
                 setPosts(prevposts => {
                     const newposts = prevposts.filter(p => p._id !== post._id);
@@ -62,8 +60,7 @@ const Post = ({ post, setPosts }) => {
 
     const updatePost = () => {
         setLoading(true);
-        axios.post('https://tapio-exercise-api.herokuapp.com/api/updatepost', {
-            id: post._id,
+        axios.put(`https://tapio-exercise-api.herokuapp.com/api/posts/${post._id}`, {
             title: inputValues.title,
             content: inputValues.content,
             img: inputValues.img

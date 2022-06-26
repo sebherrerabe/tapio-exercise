@@ -30,7 +30,7 @@ const WritePost = ({ getFromDb }) => {
 
     const sendToDB = () => {
         setLoading(true);
-        axios.post('https://tapio-exercise-api.herokuapp.com/api/createpost', {
+        axios.post('https://tapio-exercise-api.herokuapp.com/api/posts', {
             title: inputValues.title,
             content: inputValues.content,
             img: inputValues.img
